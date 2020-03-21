@@ -428,6 +428,7 @@ task downloadJtreg(type: Download) {
     // If ci.adoptopenjdk.net is down, use this copy.
     // src 'https://checkerframework.org/jtreg-4.2.0-tip.tar.gz'
     overwrite true
+    retries 3
     dest new File(buildDir, 'jtreg-4.2.0-tip.tar.gz')
     doLast {
         copy {
