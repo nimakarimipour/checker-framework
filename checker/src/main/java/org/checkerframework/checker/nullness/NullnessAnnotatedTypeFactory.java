@@ -947,7 +947,7 @@ public class NullnessAnnotatedTypeFactory
         TreeUtils.elementFromDeclaration(TreePathUtil.enclosingClass(lhsPath));
     ClassSymbol enclosingClassOfField = ((VarSymbol) element).enclClass();
     if (enclosingClassOfLhs.equals(enclosingClassOfField) && TreePathUtil.inConstructor(lhsPath)) {
-      rhsATM.replaceAnnotation(MONOTONIC_NONNULL);
+      // rhsATM.replaceAnnotation(MONOTONIC_NONNULL);
     }
   }
 
@@ -957,7 +957,7 @@ public class NullnessAnnotatedTypeFactory
   @Override
   public void wpiAdjustForUpdateNonField(AnnotatedTypeMirror rhsATM) {
     if (rhsATM.hasPrimaryAnnotation(MonotonicNonNull.class)) {
-      rhsATM.replaceAnnotation(NULLABLE);
+      // rhsATM.replaceAnnotation(NULLABLE);
     }
   }
 
